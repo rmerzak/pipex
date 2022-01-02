@@ -6,7 +6,7 @@
 #    By: rmerzak <rmerzak@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/28 21:06:06 by rmerzak           #+#    #+#              #
-#    Updated: 2021/12/29 20:26:20 by rmerzak          ###   ########.fr        #
+#    Updated: 2022/01/02 22:44:20 by rmerzak          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,23 +14,23 @@ NAME = pipex
 
 CC = gcc 
 
-INCLUDE = pipex.h
-
 CFLAGS = -Wall -Wextra -Werror
 
-sources = ft_strjoin.c ft_split.c ft_strncmp
-
-objet = $(sources:%.c=%.o)
+sources = ft_split.c\
+		ft_strjoin.c\
+		ft_strlcpy.c\
+		ft_strlen.c\
+		ft_freee.c\
+		ft_strncmp.c\
+		ft_substr.c\
+		ft_fre.c\
+		ft_pid.c ft_file.c\
+		pipex.c\
 
 all: $(NAME)
 
-# $(NAME): $(objet)
-# 	ar -rcs $(NAME) $(objet)
-
-&(NAME) : 
-
-%.o : %.c $(INCLUDE)
-	$(CC) $(CFLAGS) -c $< -o $@ 
+$(NAME) :
+	$(CC) $(CFLAGS) $(sources) -o $(NAME)
 
 clean:
 	/bin/rm -rf $(objet)
